@@ -9,13 +9,11 @@ strng = StringUtils()
                                             ("123", "123"), 
                                             ("nothing 123 Nothing", "Nothing 123 Nothing")])
 def test_capitilize(string, result):
-    strng = StringUtils()
     res = strng.capitilize(string)
     assert res == result
 
 @pytest.mark.parametrize('string, result', [("  nothing", "nothing"), ("Nothing  ", "Nothing  ")])
 def test_trim(string, result):
-    strng = StringUtils()
     res = strng.trim(string)
     assert res == result
 
@@ -24,7 +22,6 @@ def test_trim(string, result):
                                                        ("Cat dog Mouse rabbit", " ", ["Cat", "dog", "Mouse", "rabbit"]),
                                                        ("1a2a3a4", "a", ["1", "2", "3", "4"])])
 def test_to_list(string, delimeter, result):
-    strng = StringUtils()
     if delimeter is None:
         res = strng.to_list(string)
     else:    
@@ -40,7 +37,6 @@ def test_to_list(string, delimeter, result):
                                                     ("", "", True),
                                                     ("", " ", False)])
 def test_contains(string, symbol, result):
-    strng = StringUtils()
     res = strng.contains(string, symbol)
     assert res == result
 
@@ -54,7 +50,6 @@ def test_contains(string, symbol, result):
                                                     ("No 123 thing", "2", "No 13 thing"),
                                                     ("No 123 thing", " 1", "No23 thing")])
 def test_delete_symbol(string, symbol, result):
-    strng = StringUtils()
     res = strng.delete_symbol(string, symbol)
     assert res == result
 
@@ -66,7 +61,6 @@ def test_delete_symbol(string, symbol, result):
                                                     (" nothing ", " ", True),
                                                     ("nothing", "", False)])
 def test_starts_with(string, symbol, result):
-    strng = StringUtils()
     res = strng.starts_with(string, symbol)
     assert res == result
 
@@ -80,7 +74,6 @@ def test_starts_with(string, symbol, result):
                                                     ("noting!", "!", True),
                                                     ("nothing", "", False)])
 def test_end_with(string, symbol, result):
-    strng = StringUtils()
     res = strng.end_with(string, symbol)
     assert res == result    
   
@@ -91,7 +84,6 @@ def test_end_with(string, symbol, result):
                                             ("!", False),
                                             ("", True)])
 def test_is_empty(string, result):
-    strng = StringUtils()
     res = strng.is_empty(string)
     assert res == result  
 
@@ -101,7 +93,6 @@ def test_is_empty(string, result):
                                                  ([1,"a",2,"b"], "c ", "1c ac 2c b"),
                                                  ([1, 2, 3, 4], " ", "1 2 3 4")]) 
 def test_list_to_string(lst, joiner, result,):
-    strng = StringUtils()
     if joiner is None:
       res = strng.list_to_string(lst) 
     else:
